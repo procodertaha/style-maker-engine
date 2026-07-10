@@ -72,20 +72,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SKB Fashion | Premium Fashion Store" },
+      { title: "SKB Fashion | Ladies Suits Boutique in Karachi" },
       {
         name: "description",
         content:
-          "Discover stylish, high-quality clothing for men and women at SKB Fashion. Affordable fashion, modern styles, and exceptional customer service.",
+          "SKB Fashion – a Karachi ladies suits boutique in Saima Pari Mall, Hyderi. Embroidered, lawn, chiffon, bridal and unstitched suits. Open daily 11 AM – 10 PM.",
       },
       { name: "author", content: "SKB Fashion" },
       {
         name: "keywords",
         content:
-          "SKB Fashion, Fashion Store, Clothing Store, Men's Fashion, Women's Fashion, Trendy Clothing, Affordable Fashion",
+          "SKB Fashion, ladies suits Karachi, Pakistani suits, embroidered suits, lawn suits, chiffon suits, bridal suits, unstitched fabric, Hyderi boutique, North Nazimabad",
       },
       { property: "og:site_name", content: "SKB Fashion" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "SKB Fashion | Ladies Suits Boutique in Karachi" },
+      {
+        property: "og:description",
+        content:
+          "Beautifully crafted ladies suits — embroidered, lawn, chiffon, bridal & unstitched — at SKB Fashion, Saima Pari Mall, Hyderi, Karachi.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#1b1b18" },
     ],
@@ -107,10 +113,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "ClothingStore",
           name: "SKB Fashion",
           description:
-            "Premium fashion store offering curated clothing for men and women.",
-          image: "/og-cover.jpg",
+            "Ladies suits boutique in Karachi — embroidered, lawn, chiffon, bridal and unstitched.",
+          telephone: "+92 316 2723318",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Saima Pari Mall, S-43, 2nd Floor, Hyderi, Block H",
+            addressLocality: "North Nazimabad, Karachi",
+            postalCode: "74700",
+            addressCountry: "PK",
+          },
+          openingHours: "Mo-Su 11:00-22:00",
           priceRange: "$$",
-          openingHours: "Mo-Su",
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
