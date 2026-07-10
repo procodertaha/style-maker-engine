@@ -26,13 +26,13 @@ import {
 import { submitContact } from "@/lib/contact.functions";
 import heroAsset from "@/assets/hero-banner.png.asset.json";
 const heroImg = heroAsset.url;
-import catMen from "@/assets/cat-men.jpg";
-import catWomen from "@/assets/cat-women.jpg";
+import catEmbroidered from "@/assets/cat-embroidered.jpg";
+import catLawn from "@/assets/cat-lawn.jpg";
+import catChiffon from "@/assets/cat-chiffon.jpg";
 import catCasualAsset from "@/assets/casual-wear.png.asset.json";
 const catCasual = catCasualAsset.url;
-import catFormal from "@/assets/cat-formal.jpg";
-import catSeasonal from "@/assets/cat-seasonal.jpg";
-import catAccessories from "@/assets/cat-accessories.jpg";
+import catBridal from "@/assets/cat-bridal.jpg";
+import catUnstitched from "@/assets/cat-unstitched.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -54,12 +54,12 @@ const contactSchema = z.object({
 });
 
 const categories = [
-  { title: "Men's Fashion", tag: "Refined", image: catMen },
-  { title: "Women's Fashion", tag: "Elegant", image: catWomen },
-  { title: "Casual Wear", tag: "Everyday", image: catCasual },
-  { title: "Formal Wear", tag: "Occasion", image: catFormal },
-  { title: "Seasonal Collection", tag: "Autumn '26", image: catSeasonal },
-  { title: "Accessories", tag: "Details", image: catAccessories },
+  { title: "Embroidered Suits", tag: "Signature", image: catEmbroidered },
+  { title: "Lawn Collection", tag: "Summer '26", image: catLawn },
+  { title: "Chiffon & Formal", tag: "Evening", image: catChiffon },
+  { title: "Casual 3-Piece", tag: "Everyday", image: catCasual },
+  { title: "Bridal & Party Wear", tag: "Statement", image: catBridal },
+  { title: "Unstitched Fabric", tag: "Made to Measure", image: catUnstitched },
 ];
 
 const reasons = [
@@ -73,20 +73,24 @@ const reasons = [
 
 const faqs = [
   {
-    q: "What products do you sell?",
-    a: "We stock a curated selection of contemporary clothing for men and women — everyday essentials, formal pieces, seasonal collections and finishing accessories.",
+    q: "What do you sell at SKB Fashion?",
+    a: "SKB Fashion specialises in ladies suits — embroidered 3-piece suits, lawn prints, chiffon formals, bridal and party wear, and premium unstitched fabric by the yard.",
   },
   {
-    q: "Do you offer the latest fashion trends?",
-    a: "Yes. Our buyers refresh the floor weekly, balancing on-trend statement pieces with timeless staples.",
+    q: "Do you stock stitched and unstitched options?",
+    a: "Yes. Most of our designs are available in both ready-to-wear stitched sizes and unstitched fabric so you can tailor them to your fit.",
   },
   {
-    q: "Can customers contact you through WhatsApp?",
-    a: "Absolutely. Use the WhatsApp link in our contact section for quick styling questions, size checks and store pickups.",
+    q: "Can I contact you on WhatsApp before visiting?",
+    a: "Absolutely — WhatsApp us on +92 316 2723318 for availability, sizes, colour options and to reserve a piece before you come in.",
   },
   {
-    q: "Where is your store located?",
-    a: "Visit our boutique in the city fashion district — the exact address, phone and hours are listed in the contact section below.",
+    q: "Where is the store and when are you open?",
+    a: "We're on the 2nd floor of Saima Pari Mall (S-43), Hyderi, Block H, North Nazimabad, Karachi. Open daily from 11:00 AM to 10:00 PM.",
+  },
+  {
+    q: "Do you offer in-store pickup and delivery?",
+    a: "Yes. You can shop in-store, pick up an order, or arrange delivery within Karachi. Reach out on WhatsApp to arrange delivery.",
   },
 ];
 
