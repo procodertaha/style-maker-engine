@@ -1,4 +1,4 @@
-]import { createServerFn } from "@tanstack/react-start";
+import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 // Server-side validation schema — enforced on the trusted server, not just the client.
