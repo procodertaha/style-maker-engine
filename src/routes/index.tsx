@@ -13,7 +13,7 @@ import {
   Headphones,
   Heart,
   Instagram,
-  Mail,
+  MapPin,
   MapPin,
   MessageCircle,
   Phone,
