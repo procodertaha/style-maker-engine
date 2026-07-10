@@ -205,36 +205,39 @@ function Hero() {
         <div className="grid gap-12 lg:grid-cols-[3fr_2fr] lg:items-center">
           <div className="fade-up">
             <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-ink-soft">
-              <span className="h-px w-10 bg-gold" /> New Season 2026
+              <span className="h-px w-10 bg-gold" /> Ladies Suits · Karachi
             </p>
             <h1 className="text-balance font-serif text-5xl leading-[1.05] md:text-6xl lg:text-7xl">
-              Elevate your style with{" "}
-              <span className="italic text-gold">SKB Fashion</span>
+              Ladies suits, styled with{" "}
+              <span className="italic text-gold">grace</span>
             </h1>
             <p className="mt-6 max-w-[46ch] text-pretty text-lg text-ink-soft">
-              Discover trendy, high-quality clothing designed to help you look
-              and feel your best — curated with care for the modern wardrobe.
+              SKB Fashion is a Karachi boutique dedicated to beautifully crafted
+              ladies suits — embroidered, printed lawn, chiffon formals, bridal
+              statements and premium unstitched fabric.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#collections"
                 className="inline-flex h-12 items-center gap-2 bg-ink px-6 text-sm font-medium uppercase tracking-widest text-surface transition-colors hover:bg-ink/90"
               >
-                Shop Collection
+                Explore Collection
               </a>
               <a
-                href="#contact"
+                href="https://wa.me/923162723318"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex h-12 items-center gap-2 border border-ink/15 px-6 text-sm font-medium uppercase tracking-widest text-ink transition-colors hover:border-ink/40"
               >
-                Contact Us
+                WhatsApp Us
               </a>
             </div>
             <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs uppercase tracking-widest text-ink-soft">
               <span className="flex items-center gap-2">
                 <Star className="size-4 fill-gold text-gold" /> 5.0 rated
               </span>
-              <span>Curated weekly</span>
-              <span>Local boutique</span>
+              <span>Hyderi, Karachi</span>
+              <span>Open 11 AM – 10 PM</span>
             </div>
           </div>
           <div className="relative">
@@ -277,11 +280,11 @@ function About() {
               Where quality meets modern elegance.
             </h2>
             <p className="mt-6 max-w-[56ch] text-pretty text-ink-soft">
-              At SKB Fashion, we believe great style should be accessible to
-              everyone. We offer carefully selected fashion pieces that combine
-              quality, comfort, and modern design. Whether you're shopping for
-              everyday wear or something special, SKB Fashion is committed to
-              helping customers express themselves through fashion.
+              At SKB Fashion we believe every woman deserves a wardrobe that
+              feels as considered as it looks. From delicately embroidered
+              formals to breezy printed lawn, each suit is chosen for its
+              fabric, finish and fit — quiet luxury for the everyday and the
+              occasion, right here in Karachi.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8">
@@ -536,16 +539,21 @@ function ContactBlock() {
       </p>
 
       <ul className="mt-10 grid gap-5 text-sm">
-        <ContactRow icon={Phone} label="Phone" value="+92 000 000 0000" href="tel:+920000000000" />
+        <ContactRow icon={Phone} label="Phone" value="+92 316 2723318" href="tel:+923162723318" />
         <ContactRow
           icon={MessageCircle}
           label="WhatsApp"
-          value="Chat with a stylist"
-          href="https://wa.me/920000000000"
+          value="Chat with the boutique"
+          href="https://wa.me/923162723318"
         />
-        <ContactRow icon={Mail} label="Email" value="hello@skbfashion.com" href="mailto:hello@skbfashion.com" />
-        <ContactRow icon={MapPin} label="Address" value="SKB Fashion Boutique, City Center" />
-        <ContactRow icon={Clock} label="Hours" value="Monday – Sunday · 10:00 AM – 09:00 PM" />
+        <ContactRow
+          icon={MapPin}
+          label="Address"
+          value="Saima Pari Mall, S-43, 2nd Floor, Hyderi, Block H, North Nazimabad, Karachi 74700"
+          href="https://maps.google.com/?q=Saima+Pari+Mall+Hyderi+Karachi"
+        />
+        <ContactRow icon={Clock} label="Hours" value="Open Daily · 11:00 AM – 10:00 PM" />
+        <ContactRow icon={Tag} label="Services" value="In-store shopping · Pickup · Delivery" />
       </ul>
 
       <form onSubmit={onSubmit} noValidate className="mt-12 grid gap-6">
@@ -753,8 +761,8 @@ function Footer() {
             SKB <span className="text-gold">Fashion</span>
           </span>
           <p className="mt-6 max-w-[30ch] text-sm leading-relaxed text-surface/60">
-            Curated fashion for the modern wardrobe. Independent, thoughtful,
-            proudly local.
+            A Karachi boutique for beautifully crafted ladies suits — embroidered,
+            lawn, chiffon, bridal and unstitched.
           </p>
         </div>
         <FooterCol
@@ -767,19 +775,19 @@ function Footer() {
           ]}
         />
         <FooterCol
-          title="Contact"
+          title="Visit & Contact"
           items={[
-            { label: "hello@skbfashion.com", href: "mailto:hello@skbfashion.com" },
-            { label: "+92 000 000 0000", href: "tel:+920000000000" },
-            { label: "WhatsApp", href: "https://wa.me/920000000000" },
+            { label: "Saima Pari Mall, Hyderi", href: "https://maps.google.com/?q=Saima+Pari+Mall+Hyderi+Karachi" },
+            { label: "+92 316 2723318", href: "tel:+923162723318" },
+            { label: "WhatsApp", href: "https://wa.me/923162723318" },
           ]}
         />
         <div className="flex flex-col gap-4">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-gold">
             Hours
           </h4>
-          <p className="text-sm text-surface/60">Monday – Sunday</p>
-          <p className="text-sm text-surface/60">10:00 AM – 09:00 PM</p>
+          <p className="text-sm text-surface/60">Open Daily</p>
+          <p className="text-sm text-surface/60">11:00 AM – 10:00 PM</p>
           <div className="mt-4 flex gap-3">
             <SocialIcon href="https://instagram.com" label="Instagram">
               <Instagram className="size-4" />
@@ -787,7 +795,7 @@ function Footer() {
             <SocialIcon href="https://facebook.com" label="Facebook">
               <Facebook className="size-4" />
             </SocialIcon>
-            <SocialIcon href="https://wa.me/920000000000" label="WhatsApp">
+            <SocialIcon href="https://wa.me/923162723318" label="WhatsApp">
               <MessageCircle className="size-4" />
             </SocialIcon>
           </div>
