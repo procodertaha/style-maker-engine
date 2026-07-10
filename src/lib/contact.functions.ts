@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { Resend } from "resend";
 
 // Server-side validation schema — enforced on the trusted server, not just the client.
 const contactSchema = z.object({
@@ -45,6 +46,21 @@ export const submitContact = createServerFn({ method: "POST" })
       console.error("[contact] insert failed", error);
       throw new Error("Could not save your message. Please try again.");
     }
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+await resend.emails.send({
+  from: "SKB Fashion <onboarding@resend.dev>",
+  to: process.env.CONTACT_EMAIL!,
+  subject: "New Contact Form Submission",
+  html: `
+    <h2>New Contact Message</h2>
+    <p><strong>Name:</strong> ${data.name}</p>
+    <p><strong>Email:</strong> ${data.email}</p>
+    <p><strong>Phone:</strong> ${data.phone || "Not provided"}</p>
+    <p><strong>Message:</strong></p>
+    <p>${data.message}</p>
+  `,
+});
 
     return { ok: true as const };
   });
