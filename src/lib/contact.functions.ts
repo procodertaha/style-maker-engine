@@ -1,6 +1,5 @@
-import { createServerFn } from "@tanstack/react-start";
+]import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-
 
 // Server-side validation schema — enforced on the trusted server, not just the client.
 const contactSchema = z.object({
@@ -12,7 +11,11 @@ const contactSchema = z.object({
     .max(30)
     .optional()
     .or(z.literal("")),
-  message: z.string().trim().min(10, "Message should be at least 10 characters").max(2000),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Message should be at least 10 characters")
+    .max(2000),
   // Simple honeypot — bots fill this, humans don't see it.
   website: z.string().max(0).optional().or(z.literal("")),
 });
@@ -25,18 +28,23 @@ export const submitContact = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { supabaseAdmin } = await import(
+      "@/integrations/supabase/client.server"
+    );
 
-    const { error } = await supabaseAdmin.from("contact_messages").insert({
-      name: data.name,
-      email: data.email,
-      phone: data.phone || null,
-      message: data.message,
-    });
+    const { error } = await supabaseAdmin
+      .from("contact_messages")
+      .insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        message: data.message,
+      });
 
- if (error) {
-  console.error("[contact] insert failed", error);
-  throw new Error("Could not save your message. Please try again.");
-}
+    if (error) {
+      console.error("[contact] insert failed", error);
+      throw new Error("Could not save your message. Please try again.");
+    }
 
-return { ok: true as const };
+    return { ok: true as const };
+  });
