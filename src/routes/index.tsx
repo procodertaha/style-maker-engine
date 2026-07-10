@@ -23,13 +23,13 @@ import {
 } from "lucide-react";
 
 import { submitContact } from "@/lib/contact.functions";
-import heroAsset from "@/assets/hero-banner.png.asset.json";
-const heroImg = heroAsset.url;
+import heroImg from "@/assets/hero-banner.png";
+
 import catEmbroidered from "@/assets/cat-embroidered.jpg";
 import catLawn from "@/assets/cat-lawn.jpg";
 import catChiffon from "@/assets/cat-chiffon.jpg";
-import catCasualAsset from "@/assets/casual-wear.png.asset.json";
-const catCasual = catCasualAsset.url;
+import catCasual from "@/assets/casual-wear.png";
+
 import catBridal from "@/assets/cat-bridal.jpg";
 import catUnstitched from "@/assets/cat-unstitched.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
