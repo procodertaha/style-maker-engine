@@ -549,7 +549,7 @@ function ContactBlock() {
           icon={MapPin}
           label="Address"
           value="Saima Pari Mall, S-43, 2nd Floor, Hyderi, Block H, North Nazimabad, Karachi 74700"
-          href="https://www.google.com/maps/search/?api=1&query=SKB+Fashion+Saima+Pari+Mall+Hyderi+Karachi&query_place_id="
+          href="https://www.google.com/maps/search/?api=1&query=W2QV%2B9R+North+Nazimabad+Town%2C+Karachi"
         />
         <ContactRow icon={Clock} label="Hours" value="Open Daily · 11:00 AM – 10:00 PM" />
         <ContactRow icon={Tag} label="Services" value="In-store shopping · Pickup · Delivery" />
@@ -776,7 +776,7 @@ function Footer() {
         <FooterCol
           title="Visit & Contact"
           items={[
-            { label: "Saima Pari Mall, Hyderi", href: "https://www.google.com/maps/search/?api=1&query=SKB+Fashion+Saima+Pari+Mall+Hyderi+Karachi&query_place_id=" },
+            { label: "Saima Pari Mall, Hyderi", href: "https://www.google.com/maps/search/?api=1&query=W2QV%2B9R+North+Nazimabad+Town%2C+Karachi" },
             { label: "+92 316 2723318", href: "tel:+923162723318" },
             { label: "WhatsApp", href: "https://wa.me/923162723318" },
           ]}
