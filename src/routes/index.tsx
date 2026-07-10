@@ -24,10 +24,12 @@ import {
 } from "lucide-react";
 
 import { submitContact } from "@/lib/contact.functions";
-import heroImg from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-banner.png.asset.json";
+const heroImg = heroAsset.url;
 import catMen from "@/assets/cat-men.jpg";
 import catWomen from "@/assets/cat-women.jpg";
-import catCasual from "@/assets/cat-casual.jpg";
+import catCasualAsset from "@/assets/casual-wear.png.asset.json";
+const catCasual = catCasualAsset.url;
 import catFormal from "@/assets/cat-formal.jpg";
 import catSeasonal from "@/assets/cat-seasonal.jpg";
 import catAccessories from "@/assets/cat-accessories.jpg";
