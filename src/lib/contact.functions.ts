@@ -29,23 +29,7 @@ export const submitContact = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    const { supabaseAdmin } = await import(
-      "@/integrations/supabase/client.server"
-    );
-
-    const { error } = await supabaseAdmin
-      .from("contact_messages")
-      .insert({
-        name: data.name,
-        email: data.email,
-        phone: data.phone || null,
-        message: data.message,
-      });
-
-    if (error) {
-      console.error("[contact] insert failed", error);
-      throw new Error("Could not save your message. Please try again.");
-    }
+    
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 await resend.emails.send({
