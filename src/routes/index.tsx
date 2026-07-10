@@ -14,7 +14,6 @@ import {
   Heart,
   Instagram,
   MapPin,
-  MapPin,
   MessageCircle,
   Phone,
   Send,
