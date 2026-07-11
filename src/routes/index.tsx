@@ -36,6 +36,7 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -53,12 +54,12 @@ const contactSchema = z.object({
 });
 
 const categories = [
-  { title: "Embroidered Suits", tag: "Signature", image: catEmbroidered },
-  { title: "Lawn Collection", tag: "Summer '26", image: catLawn },
-  { title: "Chiffon & Formal", tag: "Evening", image: catChiffon },
-  { title: "Casual 3-Piece", tag: "Everyday", image: catCasual },
-  { title: "Bridal & Party Wear", tag: "Statement", image: catBridal },
-  { title: "Unstitched Fabric", tag: "Made to Measure", image: catUnstitched },
+  { title: "Ladies Suits", tag: "Boutique Classics", image: catEmbroidered, href: "/ladies-suits" },
+  { title: "Casual Wear", tag: "Everyday", image: catCasual, href: "/casual-wear" },
+  { title: "Party Wear", tag: "Statement", image: catBridal, href: "/party-wear" },
+  { title: "Kids Collection", tag: "Little Hearts", image: catLawn, href: "/kids-collection" },
+  { title: "Winter Collection", tag: "Cozy", image: catUnstitched, href: "/winter-collection" },
+  { title: "New Arrivals", tag: "Fresh", image: catChiffon, href: "/new-arrivals" },
 ];
 
 const reasons = [
@@ -112,7 +113,6 @@ function HomePage() {
       <Testimonials />
       <Gallery />
       <ContactAndFaq />
-      <Footer />
 
       {showTop && (
         <button
@@ -327,25 +327,27 @@ function Categories() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((c) => (
             <article key={c.title} className="group">
-              <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-                <img
-                  src={c.image}
-                  alt={`${c.title} at SKB Fashion`}
-                  loading="lazy"
-                  width={800}
-                  height={1000}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 bg-surface/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-ink">
-                  {c.tag}
-                </span>
-              </div>
-              <div className="mt-4 flex items-center justify-between px-1">
-                <h3 className="font-serif text-lg">{c.title}</h3>
-                <span className="text-xs uppercase tracking-widest text-ink-soft transition-colors group-hover:text-gold">
-                  Explore →
-                </span>
-              </div>
+              <a href={c.href} className="block">
+                <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                  <img
+                    src={c.image}
+                    alt={`${c.title} at SKB Fashion`}
+                    loading="lazy"
+                    width={800}
+                    height={1000}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 bg-surface/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-ink">
+                    {c.tag}
+                  </span>
+                </div>
+                <div className="mt-4 flex items-center justify-between px-1">
+                  <h3 className="font-serif text-lg">{c.title}</h3>
+                  <span className="text-xs uppercase tracking-widest text-ink-soft transition-colors group-hover:text-gold">
+                    Explore →
+                  </span>
+                </div>
+              </a>
             </article>
           ))}
         </div>
@@ -442,6 +444,7 @@ function Gallery() {
     { src: gallery2, alt: "Neatly folded neutral clothing" },
     { src: gallery3, alt: "Fashion lifestyle on a city street" },
     { src: gallery4, alt: "Fabric details on a hanger" },
+    { src: gallery5, alt: "Studio gallery look" },
   ];
   return (
     <section id="gallery" className="bg-muted/40 py-24">

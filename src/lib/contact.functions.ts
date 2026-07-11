@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { Resend } from "resend";
+import { getServerEnvVar } from "../lib/env";
 
 // Server-side validation schema — enforced on the trusted server, not just the client.
 const contactSchema = z.object({
@@ -29,22 +30,32 @@ export const submitContact = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    
-const resend = new Resend(process.env.RESEND_API_KEY);
+    const apiKey = getServerEnvVar("RESEND_API_KEY");
+    const contactEmail = getServerEnvVar("CONTACT_EMAIL");
 
-await resend.emails.send({
-  from: "SKB Fashion <onboarding@resend.dev>",
-  to: process.env.CONTACT_EMAIL!,
-  subject: "New Contact Form Submission",
-  html: `
-    <h2>New Contact Message</h2>
-    <p><strong>Name:</strong> ${data.name}</p>
-    <p><strong>Email:</strong> ${data.email}</p>
-    <p><strong>Phone:</strong> ${data.phone || "Not provided"}</p>
-    <p><strong>Message:</strong></p>
-    <p>${data.message}</p>
-  `,
-});
+    if (!apiKey) {
+      throw new Error("Missing RESEND_API_KEY");
+    }
+
+    if (!contactEmail) {
+      throw new Error("Missing CONTACT_EMAIL");
+    }
+
+    const resend = new Resend(apiKey);
+
+    await resend.emails.send({
+      from: "SKB Fashion <onboarding@resend.dev>",
+      to: contactEmail,
+      subject: "New Contact Form Submission",
+      html: `
+        <h2>New Contact Message</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone || "Not provided"}</p>
+        <p><strong>Message:</strong></p>
+        <p>${data.message}</p>
+      `,
+    });
 
     return { ok: true as const };
   });

@@ -9,12 +9,49 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WinterCollectionRouteImport } from './routes/winter-collection'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PartyWearRouteImport } from './routes/party-wear'
+import { Route as NewArrivalsRouteImport } from './routes/new-arrivals'
+import { Route as LadiesSuitsRouteImport } from './routes/ladies-suits'
+import { Route as KidsCollectionRouteImport } from './routes/kids-collection'
+import { Route as CasualWearRouteImport } from './routes/casual-wear'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductSlugRouteImport } from './routes/product/$slug'
 
+const WinterCollectionRoute = WinterCollectionRouteImport.update({
+  id: '/winter-collection',
+  path: '/winter-collection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartyWearRoute = PartyWearRouteImport.update({
+  id: '/party-wear',
+  path: '/party-wear',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewArrivalsRoute = NewArrivalsRouteImport.update({
+  id: '/new-arrivals',
+  path: '/new-arrivals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LadiesSuitsRoute = LadiesSuitsRouteImport.update({
+  id: '/ladies-suits',
+  path: '/ladies-suits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsCollectionRoute = KidsCollectionRouteImport.update({
+  id: '/kids-collection',
+  path: '/kids-collection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasualWearRoute = CasualWearRouteImport.update({
+  id: '/casual-wear',
+  path: '/casual-wear',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,40 +59,143 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductSlugRoute = ProductSlugRouteImport.update({
+  id: '/product/$slug',
+  path: '/product/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/casual-wear': typeof CasualWearRoute
+  '/kids-collection': typeof KidsCollectionRoute
+  '/ladies-suits': typeof LadiesSuitsRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/party-wear': typeof PartyWearRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/winter-collection': typeof WinterCollectionRoute
+  '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/casual-wear': typeof CasualWearRoute
+  '/kids-collection': typeof KidsCollectionRoute
+  '/ladies-suits': typeof LadiesSuitsRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/party-wear': typeof PartyWearRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/winter-collection': typeof WinterCollectionRoute
+  '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/casual-wear': typeof CasualWearRoute
+  '/kids-collection': typeof KidsCollectionRoute
+  '/ladies-suits': typeof LadiesSuitsRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/party-wear': typeof PartyWearRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/winter-collection': typeof WinterCollectionRoute
+  '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/casual-wear'
+    | '/kids-collection'
+    | '/ladies-suits'
+    | '/new-arrivals'
+    | '/party-wear'
+    | '/sitemap.xml'
+    | '/winter-collection'
+    | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/casual-wear'
+    | '/kids-collection'
+    | '/ladies-suits'
+    | '/new-arrivals'
+    | '/party-wear'
+    | '/sitemap.xml'
+    | '/winter-collection'
+    | '/product/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/casual-wear'
+    | '/kids-collection'
+    | '/ladies-suits'
+    | '/new-arrivals'
+    | '/party-wear'
+    | '/sitemap.xml'
+    | '/winter-collection'
+    | '/product/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CasualWearRoute: typeof CasualWearRoute
+  KidsCollectionRoute: typeof KidsCollectionRoute
+  LadiesSuitsRoute: typeof LadiesSuitsRoute
+  NewArrivalsRoute: typeof NewArrivalsRoute
+  PartyWearRoute: typeof PartyWearRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WinterCollectionRoute: typeof WinterCollectionRoute
+  ProductSlugRoute: typeof ProductSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/winter-collection': {
+      id: '/winter-collection'
+      path: '/winter-collection'
+      fullPath: '/winter-collection'
+      preLoaderRoute: typeof WinterCollectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/party-wear': {
+      id: '/party-wear'
+      path: '/party-wear'
+      fullPath: '/party-wear'
+      preLoaderRoute: typeof PartyWearRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-arrivals': {
+      id: '/new-arrivals'
+      path: '/new-arrivals'
+      fullPath: '/new-arrivals'
+      preLoaderRoute: typeof NewArrivalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ladies-suits': {
+      id: '/ladies-suits'
+      path: '/ladies-suits'
+      fullPath: '/ladies-suits'
+      preLoaderRoute: typeof LadiesSuitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids-collection': {
+      id: '/kids-collection'
+      path: '/kids-collection'
+      fullPath: '/kids-collection'
+      preLoaderRoute: typeof KidsCollectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casual-wear': {
+      id: '/casual-wear'
+      path: '/casual-wear'
+      fullPath: '/casual-wear'
+      preLoaderRoute: typeof CasualWearRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -65,12 +205,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/$slug': {
+      id: '/product/$slug'
+      path: '/product/$slug'
+      fullPath: '/product/$slug'
+      preLoaderRoute: typeof ProductSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CasualWearRoute: CasualWearRoute,
+  KidsCollectionRoute: KidsCollectionRoute,
+  LadiesSuitsRoute: LadiesSuitsRoute,
+  NewArrivalsRoute: NewArrivalsRoute,
+  PartyWearRoute: PartyWearRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WinterCollectionRoute: WinterCollectionRoute,
+  ProductSlugRoute: ProductSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
